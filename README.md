@@ -1,6 +1,9 @@
 # leveldb-interpretation
 leveldb的源码中文注释解读版
 
+- 构建项目
+
+```mvn clean install -Dmaven.test.skip=true -Dcheckstyle.skip=true```
 
 *leveldb源码结构文章*
 - [数据结构之Slice](https://blog.csdn.net/u010659877/article/details/108560473)
