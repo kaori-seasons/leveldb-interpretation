@@ -442,6 +442,11 @@ public final class Slice {
         ByteBuffer buf = ByteBuffer.wrap(data, index, length);
         int readBytes = 0;
 
+
+        /**
+         * ByteBuffer内存模型
+         * pos + rem + limit
+         */
         do {
             int localReadBytes;
             try {

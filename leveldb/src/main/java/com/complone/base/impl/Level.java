@@ -65,7 +65,8 @@ public class Level
         }
 
         List<FileMetaData> fileMetaDataList = new ArrayList<>(files.size());
-        // level0 内的.sst文件，两个文件可能存在key重叠，所以需要遍历level0内的sst，找到要查找的key在sst内的所有sst
+        // FIXME level0 内的.sst文件，两个文件可能存在key重叠，
+        //  所以需要遍历level0内的sst，找到要查找的key在sst内的所有sst
         // 如果不是level0 内的.sst文件，key不存在重叠，就可以直接二分
         if (levelNumber == 0) {
             for (FileMetaData fileMetaData : files) {

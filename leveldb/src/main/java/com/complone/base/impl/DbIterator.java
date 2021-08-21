@@ -112,6 +112,10 @@ public final class DbIterator extends
 
     }
 
+    public static void headAdd(){
+
+    }
+
     /**
      * 比较生成的序列号
      */

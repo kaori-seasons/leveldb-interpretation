@@ -394,6 +394,7 @@ public class DbImpl
             }
 
             try {
+                //TODO 缓存取出topicID对应的最大消费位点offset
                 if (!shuttingDown.get()) {
                     backgroundCompaction();
                 }

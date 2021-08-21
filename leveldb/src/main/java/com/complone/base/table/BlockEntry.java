@@ -77,6 +77,15 @@ public class BlockEntry
         return true;
     }
 
+    /**
+     * 压缩前缀提取 每个数据块的前缀有一定几率会重叠
+     * //为了避免前缀重合
+     * restart_中每个元素都是
+     * 一个数字，为了查找方便，
+     * finish直接按每个元素32bit进行存储。
+     * https://blog.csdn.net/Swartz2015/article/details/66474681
+     * @return
+     */
     @Override
     public int hashCode()
     {

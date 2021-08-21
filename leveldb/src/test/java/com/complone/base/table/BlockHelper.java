@@ -135,8 +135,18 @@ public final class BlockHelper
         return size;
     }
 
+    /**
+     * 这里的意思呢
+     * 是说我们在写入磁盘的时候 是以磁盘块的形式写入的 即64kb
+     * 这边对于一个磁盘块block当中的数据结构可以看作是一个
+     * 单向链表，每一个节点代表着即将落盘的每条消息
+     * @param key
+     * @param value
+     * @return
+     */
     static BlockEntry createBlockEntry(String key, String value)
     {
+        BlockEntry baseBlock = new BlockEntry(Slices.copiedBuffer(key, UTF_8), Slices.copiedBuffer(value, UTF_8));
         return new BlockEntry(Slices.copiedBuffer(key, UTF_8), Slices.copiedBuffer(value, UTF_8));
     }
 }

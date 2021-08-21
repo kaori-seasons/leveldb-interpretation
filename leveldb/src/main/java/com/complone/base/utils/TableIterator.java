@@ -49,6 +49,12 @@ public final class TableIterator
         current = null;
     }
 
+    //TODO 参考此处遍历数据块的方式找到对应的Key
+    // 第一阶段先这样基于重入锁+slice切片的方式保证顺序性
+    // 第二阶段 在扫描数据块之前 参考DbImpl#Line 114
+    // 在中间层加一层表缓存,采用FileChannel或者mmap的方式
+    // 参考 MMapTable.java 以及FileChannelTable.java
+    // 间接操作磁盘(不违反比赛规则)
     @Override
     protected void seekInternal(Slice targetKey)
     {
